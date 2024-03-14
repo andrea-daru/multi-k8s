@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate
+metadata:
+  name: multik8s-duckdns-org-tls
+spec:
+  secretName: multik8s-duckdns-org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: multik8s.duckdns.org
+  dnsNames:
+    - multik8s.duckdns.org
+    #- www.yourdomain.com
